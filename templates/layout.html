@@ -1,0 +1,74 @@
+<html>
+    <head>
+        {% block head %}
+        <!-- JQuery -->
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- bootstrap same as before -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+        <script type="text/javascript" src="{{ url_for('static', filename = 'searchonly.js') }}"></script>
+
+        <style>
+
+            #search-box {
+                width: 300px;
+            }
+
+            .form-inline {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            .result-item {
+                height:auto;
+                weight: auto;
+            }
+
+            .card {
+                height: 355px;
+            }
+            .search-color{
+                 background-color: lightblue;
+            }
+
+        </style>
+        {% endblock head %}
+    </head>
+
+    <body>
+    <div class="search-color">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light search-color">
+  <a class="navbar-brand" href="/"> Weather</a>
+
+    <form class="form-inline my-2 my-lg-0" id="search-form">
+                            <input id="searchbox" class="form-control mr-sm-2" type="search" placeholder="SearchBycity" aria-label="Search" required>
+                    <button id="search-btn" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+        <div id="warning">                     </div>
+    </form>
+
+
+    <form class="form-inline my-2 my-lg-0" id="search-form1">
+                            <input id="searchbox1" class="form-control mr-sm-1" type="search" placeholder="SearchBylat" aria-label="Search" required>
+                            <input id="searchbox2" class="form-control mr-sm-1" type="search" placeholder="SearchBylon" aria-label="Search" required>
+                    <button id="search-btn" class="btn btn-outline-success my-2 my-sm-0">Download History </button>
+        <div id="warning">
+        </div>
+
+    </form>
+            <form class="form-inline my-2 my-lg-0" id="search-form2">
+                    <button id="search-btn" class="btn btn-outline-success my-2 my-sm-0">SearchHistoryRaw</button>
+        <div id="warning">                     </div>
+    </form>
+</nav>
+    </div>
+        <div id="content" class="container">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+
+    </body>
+</html>

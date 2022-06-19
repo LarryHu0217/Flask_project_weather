@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+
+{% block head %}
+
+{{ super() }}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'indexnew.js') }}"></script>
+
+<script>
+    var data = {{data|tojson}};
+</script>
+{% endblock head %}
+
+
+{% block content %}
+    
+{{ super() }}
+    <div ><h1>Top Rank City</h1></div>
+<div id="result-list" class="row">
+
+
+</div>
+
+{% endblock content %}

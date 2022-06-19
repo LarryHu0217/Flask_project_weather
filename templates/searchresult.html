@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+
+{% block head %}
+
+{{ super() }}
+
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'result.js') }}"></script>
+<style>
+.font3{
+        background-color: #93b874;
+}
+</style>
+
+{% endblock head %}
+
+
+{% block content %}
+    
+{{ super() }}
+
+{% endblock content %}
